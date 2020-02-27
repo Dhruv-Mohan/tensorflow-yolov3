@@ -12,11 +12,11 @@
 #================================================================
 
 from easydict import EasyDict as edict
-from generic_modules.config import config
+from generic_modules.config import *
 
-_config_path = '../project_config/yolov3.config'
+_config_path_ = 'project_config/yolov3.config'
 con = config()
-con.load_data(_config_path)
+con.load_data(_config_path_)
 
 
 __C                             = edict()
@@ -28,7 +28,7 @@ cfg                             = __C
 __C.YOLO                        = edict()
 
 # Set the class name
-__C.YOLO.CLASSES                = con["Classes"]
+__C.YOLO.CLASSES                = con.data["Classes"]
 __C.YOLO.ANCHORS                = "./data/anchors/basline_anchors.txt"
 __C.YOLO.MOVING_AVE_DECAY       = 0.9995
 __C.YOLO.STRIDES                = [8, 16, 32]
@@ -41,7 +41,7 @@ __C.YOLO.DEMO_WEIGHT            = "./checkpoint/yolov3_coco_demo.ckpt"
 # Train options
 __C.TRAIN                       = edict()
 
-__C.TRAIN.ANNOT_PATH            = con["Dataset_file"]
+__C.TRAIN.ANNOT_PATH            = con.data["Dataset_file"]
 __C.TRAIN.BATCH_SIZE            = 6
 __C.TRAIN.INPUT_SIZE            = [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
 __C.TRAIN.DATA_AUG              = True
