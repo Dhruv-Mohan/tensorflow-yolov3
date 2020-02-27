@@ -17,3 +17,4 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 /project_config/yolov3.config
+/data/log/events.out.tfevents.1582801149.DESKTOP-L52FIIC
