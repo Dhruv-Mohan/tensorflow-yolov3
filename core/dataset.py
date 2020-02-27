@@ -163,6 +163,7 @@ class Dataset(object):
 
         for crap in line[1:]:
             print(crap)
+            print("split ",crap.split(','))
         input(line[1:])
         '''
         bboxes = np.array([list(map(lambda x: int(float(x)), box.split(','))) for box in line[1:]])

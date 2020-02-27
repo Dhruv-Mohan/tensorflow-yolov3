@@ -24,7 +24,7 @@ def process_lines(image_path, lines):
     w = x + w
     h = y + h
 
-    final_line += str(x) + ' , ' + str(y) + ' , ' + str(w) + ' , ' + str(h) + ' , ' + c + ' '
+    final_line += str(x) + ',' + str(y) + ',' + str(w) + ',' + str(h) + ',' + c + ' '
     #final_line += c + ' '
     #input(final_line)
 
