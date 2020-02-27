@@ -42,7 +42,7 @@ __C.YOLO.DEMO_WEIGHT            = "./checkpoint/yolov3_coco_demo.ckpt"
 __C.TRAIN                       = edict()
 
 __C.TRAIN.ANNOT_PATH            = con.data["Dataset_file"]
-__C.TRAIN.BATCH_SIZE            = 1
+__C.TRAIN.BATCH_SIZE            = con.data["Batch_size"]
 __C.TRAIN.INPUT_SIZE            = [320, 352, 384, 416, 448, 480, 512, 544, 576, 608]
 __C.TRAIN.DATA_AUG              = True
 __C.TRAIN.LEARN_RATE_INIT       = 1e-4

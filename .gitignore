@@ -19,3 +19,4 @@ bin-release/
 /project_config/yolov3.config
 /data/log/events.out.tfevents.1582801149.DESKTOP-L52FIIC
 /data/log/
+/checkpoint/
