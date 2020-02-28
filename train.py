@@ -157,7 +157,7 @@ class YoloTrain(object):
                 train_epoch_loss.append(train_step_loss)
                 self.summary_writer.add_summary(summary, global_step_val)
                 pbar.set_description("train loss: %.2f" %train_step_loss)
-
+            '''
             for test_data in self.testset:
                 test_step_loss = self.sess.run( self.loss, feed_dict={
                                                 self.input_data:   test_data[0],
@@ -171,12 +171,12 @@ class YoloTrain(object):
                 })
 
                 test_epoch_loss.append(test_step_loss)
-
+            '''
             train_epoch_loss, test_epoch_loss = np.mean(train_epoch_loss), np.mean(test_epoch_loss)
             ckpt_file = "./checkpoint/yolov3_test_loss=%.4f.ckpt" % test_epoch_loss
             log_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-            print("=> Epoch: %2d Time: %s Train loss: %.2f Test loss: %.2f Saving %s ..."
-                            %(epoch, log_time, train_epoch_loss, test_epoch_loss, ckpt_file))
+            print("=> Epoch: %2d Time: %s Train loss: %.2f Saving %s ..."
+                            %(epoch, log_time, train_epoch_loss,  ckpt_file))
             self.saver.save(self.sess, ckpt_file, global_step=epoch)
 
 
